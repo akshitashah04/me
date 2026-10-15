@@ -1,6 +1,6 @@
 # Akshita — a little curious, always
 
-A personal introduction website with a portrait-led cherry, chocolate, and warm-cream design with a photo scrapbook, real photos, a filterable memories gallery, and keyboard-accessible photo viewing.
+A personal introduction website with a portrait-led warm-cream and plum-brown design with a photo scrapbook, real photos, a filterable memories gallery, and keyboard-accessible photo viewing.
 
 ## Open the website
 

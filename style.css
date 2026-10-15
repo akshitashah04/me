@@ -54,3 +54,11 @@ header{background:#34121c}
 footer{border-top:1px solid #9d747733}
 @media(max-width:1100px){.memories,.projects{margin-inline:24px;padding:65px 20px}}
 @media(max-width:700px){.memories,.projects{margin:0 14px 32px;padding:48px 15px;border-radius:3px}.closing{padding-top:45px}}
+/* Show every value on small screens; drawn stars never become emoji. */
+.ticker{list-style:none;margin:0;overflow:visible;white-space:normal;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 25px;padding:21px 24px}
+.ticker-item{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0}
+.ticker .ticker-star{width:12px;height:12px;flex:0 0 12px;fill:#c4989c;display:block}
+.ticker-item>span{font-size:8px;letter-spacing:1.2px;line-height:1.6}
+@media(max-width:700px){.ticker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px;padding:22px 18px}.ticker-item{gap:7px}.ticker-item:last-child{grid-column:1/-1}.ticker-item>span{font-size:7px;letter-spacing:.7px}.ticker .ticker-star{width:10px;height:10px;flex-basis:10px}}
+@media(max-width:350px){.ticker{padding-inline:12px;column-gap:7px}.ticker-item{gap:5px}.ticker-item>span{font-size:6px;letter-spacing:.6px}}
+.ticker-item>span{font-size:9px}@media(max-width:700px){.ticker-item>span{font-size:8px}}@media(max-width:350px){.ticker-item>span{font-size:7px}}

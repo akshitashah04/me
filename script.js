@@ -52,3 +52,48 @@ document.querySelector('#surprise-joy').addEventListener('click', () => {
     .filter(button => button.getAttribute('aria-pressed') !== 'true');
   otherJoys[Math.floor(Math.random() * otherJoys.length)].click();
 });
+
+const kindThoughts = [
+  'You don’t need to have the whole path figured out. One thoughtful step is a beautiful place to start.',
+  'A small beginning still counts. Open the notebook, ask the question, give the idea a chance.',
+  'Your pace is allowed to look different. You’re building a life, not racing a clock.',
+  'You can be ambitious and gentle with yourself at the same time.',
+  'A difficult day is a chapter, not the whole story. Leave a little room for tomorrow.',
+  'You don’t have to be the loudest person in the room to bring something valuable to it.',
+  'Rest belongs in the plan too. You’re a person, not a list of things to finish.',
+  'Being new at something means you gave yourself a chance to grow. That takes courage.',
+  'Celebrate the quiet progress: the clearer question, the second try, the thing you understand a little better.',
+  'Your curiosity is worth following. Sometimes a simple “what if?” opens a lovely door.',
+  'Make room for the little joys along the way. Your life is happening between the milestones too.',
+  'You are allowed to change direction. Learning more about yourself is progress, too.'
+];
+let thoughtIndex = 0;
+const thoughtText = document.querySelector('#kind-thought');
+const copyStatus = document.querySelector('#copy-status');
+document.querySelector('#next-thought').addEventListener('click', () => {
+  thoughtIndex = (thoughtIndex + 1) % kindThoughts.length;
+  thoughtText.textContent = kindThoughts[thoughtIndex];
+  document.querySelector('#thought-count').textContent = `${String(thoughtIndex + 1).padStart(2, '0')} / ${kindThoughts.length} little reminders`;
+  copyStatus.textContent = '';
+});
+document.querySelector('#copy-thought').addEventListener('click', async () => {
+  const message = `${thoughtText.textContent}\n— A little kind thought from Akshita Shah`;
+  let copied = false;
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(message);
+      copied = true;
+    }
+  } catch { /* Local files and browser permissions may require the fallback. */ }
+  if (!copied) {
+    const field = document.createElement('textarea');
+    field.value = message;
+    field.style.cssText = 'position:fixed;top:0;left:-9999px';
+    document.body.append(field);
+    field.select();
+    try { copied = document.execCommand('copy'); } catch { copied = false; }
+    field.remove();
+    document.querySelector('#copy-thought').focus();
+  }
+  copyStatus.textContent = copied ? 'Copied. A little kindness, ready to pass on.' : 'Select the thought above and copy it to share a little kindness.';
+});

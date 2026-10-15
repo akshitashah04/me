@@ -47,8 +47,7 @@ header{background:#34121c}
 @keyframes joy-flower-twirl{0%{transform:rotate(0) scale(1)}45%{transform:rotate(190deg) scale(1.15)}75%{transform:rotate(340deg) scale(1.06)}100%{transform:rotate(360deg) scale(1)}}
 @keyframes joy-note-dance{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-5px) rotate(-10deg)}55%{transform:translateY(0) rotate(6deg)}75%{transform:translateY(-3px) rotate(-5deg)}}
 @keyframes joy-heartbeat{0%,35%,70%,100%{transform:scale(1)}18%{transform:scale(1.16)}50%{transform:scale(1.1)}}
-/* Cream breathing room between neighboring plum chapters. */
-.memories,.projects{border-top:14px solid var(--paper)}
-.closing{border-top:10px solid var(--paper)}
-footer{border-top:1px solid #9d747766}
-@media(max-width:700px){.memories,.projects{border-top-width:10px}.closing{border-top-width:8px}}
+/* A quiet editorial pause between neighboring plum chapters. */
+.memories,.projects,.closing{border-top:0;position:relative}
+.memories:before,.projects:before,.closing:before{content:"";display:block;position:absolute;top:0;left:50%;translate:-50% -50%;width:min(66%,680px);height:13px;background:linear-gradient(135deg,transparent 35%,#b5848e 36% 64%,transparent 65%) center/9px 9px no-repeat,linear-gradient(to right,transparent,#9c6b765c) left center/calc(50% - 20px) 1px no-repeat,linear-gradient(to left,transparent,#9c6b765c) right center/calc(50% - 20px) 1px no-repeat;pointer-events:none}
+footer{border-top:1px solid #9d747733}

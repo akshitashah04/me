@@ -6,3 +6,5 @@
 @media(max-width:350px){nav{gap:14px}.hero-name h2{font-size:34px}.hero-side>.handwritten{font-size:19px}.hero-focus{font-size:5px}.hero-portrait img{height:380px}.hero-name,.hero-side{top:558px}.hero{min-height:960px}.photo-open img{height:200px}.memory-grid figcaption{font-size:13px}.project-art b{font-size:40px}.joy-options button{font-size:8px}.thought-actions button{font-size:8px;padding:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 @media(forced-colors:active){button,a{border:1px solid ButtonText}.hero h1{z-index:0}.hero-name,.hero-portrait,.hero-side{z-index:1}}
+/* Simple little-joy cards, with icons and words. */
+.joy-card{padding:28px 25px 24px;position:relative}.card-no{position:absolute;right:24px;top:25px;margin:0}.card-icon{display:block;font-family:Georgia,serif;font-size:35px;line-height:1;color:#d6a6ab;margin-bottom:27px}.joy-card>p{min-height:91px}@media(max-width:700px){.joy-card{padding:27px 24px 23px}.joy-card>p{min-height:0}}

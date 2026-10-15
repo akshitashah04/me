@@ -30,3 +30,19 @@ viewer.addEventListener('close', () => {
   document.body.classList.remove('photo-viewing');
   previousFocus?.focus();
 });
+
+const littleJoys = {
+  explore: 'Take a different turn. Your next favourite place might be around the corner.',
+  music: 'Pick the song that feels like sunshine. Let the rest of the day find its rhythm.',
+  food: 'Something warm, something sweet, or something new. Make room for a delicious little reset.'
+};
+document.querySelectorAll('[data-joy]').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('[data-joy]').forEach(option => {
+      const selected = option === button;
+      option.classList.toggle('selected', selected);
+      option.setAttribute('aria-pressed', String(selected));
+    });
+    document.querySelector('#joy-message').textContent = littleJoys[button.dataset.joy];
+  });
+});

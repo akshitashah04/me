@@ -24,3 +24,7 @@ body,header,footer,.hero,.ticker,.joys,.memories,.professional,.projects,.contac
 .ticker{border-block:1px solid #79505c66}
 .memories,.projects,.closing{border-top:1px solid #79505c55}
 .joy-picker{background:#332129}
+/* Keep the opening’s original cherry gradient. */
+header{background:#34121c}
+.hero{background:radial-gradient(ellipse at 28% 30%,#701c2f 0,#3f1420 45%,#1c171a 90%)}
+@media(max-width:700px){.hero{background:radial-gradient(ellipse at 30% 20%,#721c31,#32131e 65%,#1c171a)}}

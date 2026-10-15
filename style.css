@@ -28,3 +28,12 @@ body,header,footer,.hero,.ticker,.joys,.memories,.professional,.projects,.contac
 header{background:#34121c}
 .hero{background:radial-gradient(ellipse at 28% 30%,#701c2f 0,#3f1420 45%,#1c171a 90%)}
 @media(max-width:700px){.hero{background:radial-gradient(ellipse at 30% 20%,#721c31,#32131e 65%,#1c171a)}}
+/* A few quiet moments of play. */
+.joy-card,.project-card{transition:translate .22s ease,box-shadow .22s ease}
+.button,.linkedin-button,.thought-actions button,.joy-options button{transition:translate .18s ease,background .2s ease,box-shadow .2s ease}
+@media(hover:hover) and (pointer:fine){.joy-card:hover,.project-card:hover{translate:0 -4px;box-shadow:0 9px 22px #160d1426}.button:hover,.linkedin-button:hover,.thought-actions button:hover,.joy-options button:hover{translate:0 -2px;box-shadow:0 4px 10px #160d1418}}
+.button:active,.linkedin-button:active,.thought-actions button:active,.joy-options button:active{translate:0 0}
+.reveal-ready{opacity:0;transition:opacity .55s ease}.reveal-ready.is-revealed{opacity:1}
+.joy-picker-content{position:relative}.joy-feedback{position:absolute;bottom:-21px;left:0;font-family:var(--serif);font-style:italic;font-size:11px;color:#e4bcab;line-height:1.4}
+@media(max-width:700px){.joy-feedback{font-size:10px;bottom:-20px}}
+@media(prefers-reduced-motion:reduce){.reveal-ready{opacity:1}.joy-card,.project-card,.button,.linkedin-button,.thought-actions button,.joy-options button{translate:none!important;transition:none!important}}

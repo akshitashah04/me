@@ -97,3 +97,49 @@ document.querySelector('#copy-thought').addEventListener('click', async () => {
   }
   copyStatus.textContent = copied ? 'Copied. A little kindness, ready to pass on.' : 'Select the thought above and copy it to share a little kindness.';
 });
+
+// Small enhancements that leave the page usable without motion or JavaScript.
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const revealTargets = document.querySelectorAll('.section-heading, .about-copy, .about-photo, .future-title, .work-entry, .education, .project-card, .notes-intro, .contact > div');
+let revealObserver;
+if ('IntersectionObserver' in window && !motionPreference.matches) {
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealTargets.forEach(target => {
+    target.classList.add('reveal-ready');
+    revealObserver.observe(target);
+  });
+}
+let noteTurn;
+document.querySelector('#next-thought').addEventListener('click', () => {
+  if (motionPreference.matches || !thoughtText.animate) return;
+  noteTurn?.cancel();
+  noteTurn = thoughtText.animate([
+    { opacity: 0.45, transform: 'perspective(700px) rotateY(-8deg) translateX(-5px)' },
+    { opacity: 1, transform: 'perspective(700px) rotateY(0deg) translateX(0)' }
+  ], { duration: 320, easing: 'ease-out' });
+});
+const joyFeedback = document.createElement('span');
+joyFeedback.className = 'joy-feedback';
+joyFeedback.setAttribute('role', 'status');
+document.querySelector('.joy-picker-content').append(joyFeedback);
+let joyFeedbackTimer;
+document.querySelectorAll('[data-joy]').forEach(button => {
+  button.addEventListener('click', () => {
+    clearTimeout(joyFeedbackTimer);
+    joyFeedback.textContent = 'Nice choice! A little joy goes a long way.';
+    joyFeedbackTimer = setTimeout(() => { joyFeedback.textContent = ''; }, 2400);
+  });
+});
+motionPreference.addEventListener('change', () => {
+  if (!motionPreference.matches) return;
+  revealObserver?.disconnect();
+  revealTargets.forEach(target => target.classList.add('is-revealed'));
+  noteTurn?.cancel();
+});

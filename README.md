@@ -1,10 +1,10 @@
 # Akshita — a little curious, always
 
-A personal introduction website with an editorial cream-and-olive scrapbook design with cherry accents and a portrait filmstrip, real photos, a filterable memories gallery, and keyboard-accessible photo viewing.
+A personal introduction website with a portrait-led cherry, chocolate, and warm-cream design with a photo scrapbook, real photos, a filterable memories gallery, and keyboard-accessible photo viewing.
 
 ## Open the website
 
-Unzip the download and double-click `index.html`. Keep `style.css`, `editorial.css`, `script.js`, and the `assets` folder alongside it. No installation or build is needed.
+Unzip the download and double-click `index.html`. Keep `style.css`, `script.js`, and the `assets` folder alongside it. No installation or build is needed.
 
 ## Optional development server
 
@@ -18,6 +18,6 @@ Then visit http://localhost:3000. Alternatively, with Node.js and Python 3 insta
 
 ## Personalize
 
-Edit text and captions in `index.html`, base styling in `style.css` and the editorial theme in `editorial.css`, and gallery interactions in `script.js`. Compressed, metadata-free photos are included in `assets`; original uploads are not committed. Google Fonts is optional and falls back to system fonts offline.
+Edit text and captions in `index.html`, styling in `style.css`, and gallery interactions in `script.js`. Compressed, metadata-free photos are included in `assets`; original uploads are not committed. Google Fonts is optional and falls back to system fonts offline.
 
 Click a gallery photo to enlarge it. Close with the × button, Escape, or the shaded backdrop. The memory filters work locally without a server.

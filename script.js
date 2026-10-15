@@ -46,3 +46,9 @@ document.querySelectorAll('[data-joy]').forEach(button => {
     document.querySelector('#joy-message').textContent = littleJoys[button.dataset.joy];
   });
 });
+
+document.querySelector('#surprise-joy').addEventListener('click', () => {
+  const otherJoys = [...document.querySelectorAll('[data-joy]')]
+    .filter(button => button.getAttribute('aria-pressed') !== 'true');
+  otherJoys[Math.floor(Math.random() * otherJoys.length)].click();
+});

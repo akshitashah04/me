@@ -21,3 +21,7 @@ Then visit http://localhost:3000. Alternatively, with Node.js and Python 3 insta
 Edit text and captions in `index.html`, styling in `style.css`, and gallery interactions in `script.js`. Compressed, metadata-free photos are included in `assets`; original uploads are not committed. Google Fonts is optional and falls back to system fonts offline.
 
 Click a gallery photo to enlarge it. Close with the × button, Escape, or the shaded backdrop. The memory filters work locally without a server.
+
+## Publish on GitHub Pages
+
+Open https://github.com/akshitashah04/me/settings/pages. Under Build and deployment, select Deploy from a branch, choose main and / (root), and save. Once GitHub reports deployment complete, the site is available at https://akshitashah04.github.io/me/. A 404 before a successful Pages deployment does not indicate a website code failure.

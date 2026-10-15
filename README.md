@@ -1,13 +1,23 @@
 # Akshita — a little curious, always
 
-A responsive, single-page personal introduction built with HTML and CSS. No dependencies or build step.
+A personal introduction website with a cream, sage, and blush scrapbook design, real photos, a filterable memories gallery, and keyboard-accessible photo viewing.
 
-## Run
+## Open the website
+
+Unzip the download and double-click `index.html`. Keep `style.css`, `script.js`, and the `assets` folder alongside it. No installation or build is needed.
+
+## Optional development server
+
+With Python 3 installed, run this from the project folder:
 
 ```sh
-npm run dev
+python3 -m http.server 3000
 ```
 
-Serves on port 3000 using Python 3. You can also open `index.html` directly.
+Then visit http://localhost:3000. Alternatively, with Node.js and Python 3 installed, run `npm run dev`.
 
-Edit the introduction and interests in `index.html`, and the palette and layout in `style.css`. Fonts are served by Google Fonts; illustrations are included locally. Google Fonts requires internet access; system fonts provide an offline fallback.
+## Personalize
+
+Edit text and captions in `index.html`, styling in `style.css`, and gallery interactions in `script.js`. Compressed, metadata-free photos are included in `assets`; original uploads are not committed. Google Fonts is optional and falls back to system fonts offline.
+
+Click a gallery photo to enlarge it. Close with the × button, Escape, or the shaded backdrop. The memory filters work locally without a server.

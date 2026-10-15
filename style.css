@@ -47,7 +47,10 @@ header{background:#34121c}
 @keyframes joy-flower-twirl{0%{transform:rotate(0) scale(1)}45%{transform:rotate(190deg) scale(1.15)}75%{transform:rotate(340deg) scale(1.06)}100%{transform:rotate(360deg) scale(1)}}
 @keyframes joy-note-dance{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-5px) rotate(-10deg)}55%{transform:translateY(0) rotate(6deg)}75%{transform:translateY(-3px) rotate(-5deg)}}
 @keyframes joy-heartbeat{0%,35%,70%,100%{transform:scale(1)}18%{transform:scale(1.16)}50%{transform:scale(1.1)}}
-/* A quiet editorial pause between neighboring plum chapters. */
-.memories,.projects,.closing{border-top:0;position:relative}
-.memories:before,.projects:before,.closing:before{content:"";display:block;position:absolute;top:0;left:50%;translate:-50% -50%;width:min(66%,680px);height:13px;background:linear-gradient(135deg,transparent 35%,#b5848e 36% 64%,transparent 65%) center/9px 9px no-repeat,linear-gradient(to right,transparent,#9c6b765c) left center/calc(50% - 20px) 1px no-repeat,linear-gradient(to left,transparent,#9c6b765c) right center/calc(50% - 20px) 1px no-repeat;pointer-events:none}
+/* Quiet tonal panels separate neighboring chapters. */
+.memories,.projects{position:relative;border:1px solid #b7909740;background:#302128;margin:0 32px 48px;border-radius:4px;padding:76px 47px}
+.closing{position:relative;border-top:0;background:#271a20;padding-top:55px}
+.memories:before,.projects:before,.closing:before{content:none}
 footer{border-top:1px solid #9d747733}
+@media(max-width:1100px){.memories,.projects{margin-inline:24px;padding:65px 20px}}
+@media(max-width:700px){.memories,.projects{margin:0 14px 32px;padding:48px 15px;border-radius:3px}.closing{padding-top:45px}}

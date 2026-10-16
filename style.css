@@ -62,3 +62,14 @@ footer{border-top:1px solid #9d747733}
 @media(max-width:700px){.ticker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px;padding:22px 18px}.ticker-item{gap:7px}.ticker-item:last-child{grid-column:1/-1}.ticker-item>span{font-size:7px;letter-spacing:.7px}.ticker .ticker-star{width:10px;height:10px;flex-basis:10px}}
 @media(max-width:350px){.ticker{padding-inline:12px;column-gap:7px}.ticker-item{gap:5px}.ticker-item>span{font-size:6px;letter-spacing:.6px}}
 .ticker-item>span{font-size:9px}@media(max-width:700px){.ticker-item>span{font-size:8px}}@media(max-width:350px){.ticker-item>span{font-size:7px}}
+/* A frameless portrait layered into the portfolio title. */
+.hero .hero-portrait.hero-cutout{top:145px;width:470px;height:620px;z-index:1;pointer-events:none}
+.hero .hero-cutout img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom;border:0;border-radius:0;box-shadow:none;mask-image:linear-gradient(to bottom,#000 0%,#000 91%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 91%,transparent 100%)}
+.hero-name,.hero-side{z-index:2}.hero h1{z-index:0}
+@media(max-width:1100px){.hero .hero-portrait.hero-cutout{top:128px;width:410px;height:555px}}
+@media(max-width:800px) and (min-width:701px){.hero .hero-portrait.hero-cutout{top:110px;width:350px;height:545px}}
+@media(max-width:700px){.hero .hero-portrait.hero-cutout{top:86px;width:calc(100% - 26px);max-width:380px;height:460px}.hero h1{z-index:0}}
+@media(max-width:350px){.hero .hero-portrait.hero-cutout{top:77px;height:450px}}
+.hero .hero-cutout img{object-fit:cover;object-position:center top}
+@media(max-width:700px){.hero .hero-portrait.hero-cutout{top:67px}}
+@media(max-width:350px){.hero .hero-portrait.hero-cutout{top:61px}}
